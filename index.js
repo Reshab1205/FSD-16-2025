@@ -317,17 +317,18 @@
 //    ()
 
 
-const data = [1,2,3,4]
-const data1 = {a:1, b:2, c:3, d:4}
-data1[c]
+// const data = [1,2,3,4]
+// const data1 = {a:1, b:2, c:3, d:4}
+// data1["c"] = 7
+// console.log(data1)
 
 
-const key = Object.keys(data1)
-const values = Object.values(data1)
-const fdata = Object.entries(data1)
-console.log(key)
-console.log(values)
-console.log(fdata)
+// const key = Object.keys(data1)
+// const values = Object.values(data1)
+// const fdata = Object.entries(data1)
+// console.log(key)
+// console.log(values)
+// console.log(fdata)
 
 
 // for(let x in data) {
@@ -337,6 +338,8 @@ console.log(fdata)
 // for(let x of data) {
 //     console.log(x)
 // }
+
+
 
 
 
