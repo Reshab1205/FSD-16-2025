@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="data(event)">
+        <input id="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*_=+-]).{8,}" required/>
+        <button type="submit">Click</button>
+    </form>
+</body>
+<script>
+    function data(event) {
+        event.preventDefault()
+        const data = document.getElementById('password').value
+        console.log(data)
+    }
+</script>
+</html>
