@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Register Form</h2>
+    <form onsubmit="register(event)">
+      <label>FullName:</label>
+      <input
+        id="name"
+        title="name"
+        name="name"
+        type="text"
+        placeholder="Enter Your name..."
+        required
+      />
+      <br />
+      <label>Email:</label>
+      <input
+        id="email"
+        title="email"
+        name="email"
+        type="email"
+        placeholder="Enter Your Email..."
+        required
+      />
+      <br />
+      <label>Password:</label>
+      <input
+        id="password"
+        title="password"
+        name="password"
+        type="password"
+        placeholder="Enter Your password..."
+        required
+      />
+       <label>Mobile Number:</label>
+      <input
+        id="mobile_number"
+        title="mobile_number"
+        name="mobile_number"
+        type="text"
+        placeholder="Enter Your mobile_number..."
+        required
+      />
+       <label>Aadhar Number:</label>
+      <input
+        id="aadhar_number"
+        title="aadhar_number"
+        name="aadhar_number"
+        type="text"
+        placeholder="Enter Your Aadhar Number..."
+        required
+      />
+      <br />
+      <label>City:</label>
+      <input
+        id="city"
+        title="city"
+        name="city"
+        type="text"
+        placeholder="Enter Your City..."
+        required
+      />
+      <br />
+      <br />
+      <!-- fullname, mobile_number, city, aadhar_number -->
+      <button type="submit">Register</button>
+    </form>
+    <span id="msg"></span>
+  </body>
+  <script>
+    function register(event) {
+        event.preventDefault()
+       const fullname = document.getElementById('name').value
+       const email = document.getElementById('email').value
+       const password = document.getElementById('password').value
+       const aadhar_number = document.getElementById('aadhar_number').value
+       const mobile_number = document.getElementById('mobile_number').value
+       const city = document.getElementById('city').value
+
+
+       const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+       const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+       const aadharRegex = /(^[0-9]{4}[0-9]{4}[0-9]{4}$)|(^[0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|(^[0-9]{4}-[0-9]{4}-[0-9]{4}$)/
+       const mobileRegex = /^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/
+
+       if(emailRegex.test(email) === true && passwordRegex.test(password) ===true && aadharRegex.test(aadhar_number) === true && mobileRegex.test(mobile_number) === true) {
+        document.getElementById('msg').innerHTML = "Pattern Matched"
+       } else {
+        document.getElementById('msg').innerHTML = "Wrong Pattern"
+       }
+
+    }
+  </script>
+</html>

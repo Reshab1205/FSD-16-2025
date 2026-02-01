@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #img {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p id="demo"></p>
+    <p id="tab">Reshab</p> -->
+    <img
+      id="img"
+      src="../assests/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.webp"
+    />
+    <button onclick="removeImg()">RemoveImg</button>
+    <button onclick="changeImg()">ChangeImg</button>
+  </body>
+  <script>
+    // document.getElementById('demo').innerText = 'Hello World'
+    // const data = document.getElementById('tab').textContent
+    // console.log(data)
+    function removeImg() {
+      if (document.getElementById("img").style.display === "block") {
+        document.getElementById("img").style.display = "none";
+      } else {
+        document.getElementById("img").style.display = "block";
+      }
+    }
+
+    // function changeImg() {
+    //     if(document.getElementById('img').src === "../assests/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.webp") {
+    //         document.getElementById('img').src = "../assests/sun-sets-behind-mountain-ranges-600nw-2479236003.webp";
+    //     } else {
+    //         document.getElementById('img').src = "../assests/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.webp";
+    //     }
+    // }
+
+    function changeImg() {
+       const data = document.getElementById('img').getAttribute('src')
+       if(data === '../assests/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.webp') {
+        document.getElementById('img').setAttribute('src', '../assests/sun-sets-behind-mountain-ranges-600nw-2479236003.webp')
+       } else {
+            document.getElementById('img').setAttribute('src', '../assests/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.webp')
+       }
+    }
+  </script>
+</html>
