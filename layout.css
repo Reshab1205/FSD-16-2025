@@ -46,6 +46,20 @@
     justify-content: center;
 }
 
+.cards {
+    display: grid;
+    /* grid-template-columns: ; */
+
+}
+
+.card {
+    margin: 10px;
+    padding: 20px;
+    height: 250px;
+    width: 250px;
+    background-color: red;
+}
+
 .footer {
   background-color: #222;
   padding: 20px;

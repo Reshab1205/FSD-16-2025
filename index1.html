@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            outline: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <p>Counter :<span id="count">0</span> </p>
+    <button onclick="increase()" >+</button>
+    <button onclick="decrease()" >-</button>
+    <button onclick="reset()" >Reset</button>
+    <button onclick="save()" >SaveData</button>
+    <p id="display"></p>
+    <p id="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse culpa repellat harum magnam deleniti debitis deserunt reiciendis, natus doloremque?</p>
+    <button onclick="changeColor()" >ChangeColor</button>
+    
+    
+    <script>
+        let count = 0
+
+        function increase() {
+            count++
+            document.getElementById('count').innerText = count
+        }
+        function decrease() {
+            count--
+            document.getElementById('count').innerText = count
+        }
+
+        function reset() {
+            count = 0
+            document.getElementById('count').innerText = count
+        }
+
+        function save() {
+            const data = document.getElementById('count').textContent
+            localStorage.setItem('data', data)
+        }
+
+
+
+        const d = localStorage.getItem('data')
+        document.getElementById('display').innerText = d
+
+
+        function changeColor() {
+            let colors = ['red', 'blue', 'green', 'yellow', 'greenyellow', 'orange', 'purple', 'hotpink', 'magenta']
+            let data = Math.floor(Math.random() * colors.length)
+            console.log(colors[data])
+            document.getElementById('demo').style.outlineColor = colors[data]
+        }
+    </script>
+</body>
+</html>
